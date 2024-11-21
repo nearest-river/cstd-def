@@ -11,7 +11,7 @@
 typedef void (*Destructor)(void* self);
 
 /// A function that clones from `src` to `dest` without forgetting about the resources held by `self`.
-typedef void (*Clone)(const void* dest,const void* src);
+typedef void (*Clone)(void* dest,void* src);
 
 typedef int (*ComparisonFn)(const void*,const void*);
 
