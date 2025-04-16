@@ -6,6 +6,11 @@
 #include "../include/cprimitives/src/lib.h"
 
 
+typedef enum {
+  OrderingLess=-1,
+  OrderingEqual=0,
+  OrderingGreater=1
+} Ordering;
 
 /// A function that frees the resources held by `self`.
 typedef void (*Destructor)(void* self);
@@ -13,7 +18,7 @@ typedef void (*Destructor)(void* self);
 /// A function that clones from `src` to `dest` without forgetting about the resources held by `self`.
 typedef void (*Clone)(void* dest,void* src);
 
-typedef int (*ComparisonFn)(const void*,const void*);
+typedef Ordering (*ComparisonFn)(const void*,const void*);
 
 typedef bool (*PredicateFn)(const void*);
 
